@@ -47,7 +47,10 @@ def charts(c):
 @task
 def document(c):
     """Compile the one-page Figure 13 results document."""
-    c.run(f'latexmk -pdf -cd "{ROOT / "results" / "summary.tex"}"')
+    c.run(
+        "SOURCE_DATE_EPOCH=946684800 "
+        f'latexmk -g -pdf -cd "{ROOT / "results" / "summary.tex"}"'
+    )
 
 
 @task(pre=[export, charts, document])
