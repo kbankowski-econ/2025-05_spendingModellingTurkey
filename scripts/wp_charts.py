@@ -13,6 +13,7 @@ renders it there. The two are independent: shrink DisplayWidth to make a figure
 smaller in the paper without touching its fonts. chartTable.csv is expected
 alongside this module. Depends only on the standard library and plotly.
 """
+import re
 import struct
 import zlib
 from pathlib import Path
@@ -101,4 +102,18 @@ def write_pdf(fig, output_path, render_width_px, display_width_cm):
     bare \\includegraphics{...pdf} renders it at the paper size. Assumes the
     display and render aspect ratios match (height follows from the scale)."""
     scale = display_width_cm * _CM_TO_PX / render_width_px
-    fig.write_image(str(output_path), format="pdf", scale=scale)
+    new_bytes = pio.to_image(fig, format="pdf", scale=scale)
+
+    # Chromium timestamps otherwise make an unchanged chart dirty on every run.
+    fixed_date = b"D:20000101000000+00'00'"
+    new_bytes = re.sub(
+        rb"D:\d{14}[+-]\d{2}'\d{2}'",
+        fixed_date,
+        new_bytes,
+    )
+    if output_path.exists() and output_path.read_bytes() == new_bytes:
+        print(f"  [SmartSave] Skipping {output_path.name} (no changes)")
+        return False
+    output_path.write_bytes(new_bytes)
+    print(f"  [SmartSave] Updating {output_path.name}")
+    return True
