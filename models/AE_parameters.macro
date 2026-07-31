@@ -1,0 +1,25 @@
+% AE-specific calibration            (definition                                    | EM value)
+
+% production and growth
+alphaG=0.054;                        % share of public capital in production         | EM: 0.17
+g=1.004;                            % constant gross quarterly trend growth          | EM: 1.0075
+
+% taxes and debt
+taucss=0.18;                         % steady-state consumption tax rate             | EM: 0.15
+tauwss=0.25;                         % steady-state income tax rate                  | EM: 0.10
+byss=1*4;                            % steady-state debt to quarterly GDP (annual x4)| EM: 0.6*4
+
+% public spending shares of GDP
+Igiy=0.03;                            % public investment                             | EM: 0.05
+Gcy=0.18;                            % public consumption                            | EM: 0.14
+Igey=0.0145;                         % human-capital-related spending                | EM: 0.02
+Grdy=0.006;                         % R&D spending                                  | EM: 0.001
+
+% human capital
+mu=0.1;                          % elasticity of HC formation w.r.t. public HRC  | EM: 0.25
+
+% R&D and technology adoption
+eGRD_ss=0.399;                       % public R&D efficiency gap (e^GRD)              | EM: 0.2
+alphaRD=0.09;                         % long-run R&D elasticity in tech creation      | EM: 0
+alphaHA=0.1/(1-rho_A);                % long-run HC elasticity (keeps loading at 0.1) | EM: 0
+varsigma=0.8;                       % adoption elasticity                           | EM: 0.1

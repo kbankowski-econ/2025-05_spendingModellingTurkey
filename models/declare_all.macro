@@ -1,0 +1,114 @@
+var
+C               % HH consumption
+lambda          % Marginal Utility
+R               % Nominal policy and government financing rate
+PI              % Gross inflation
+N               % (Effective) Labor supply
+w          % Real wages
+Ip              % Private investment
+Kp              % Private capital
+rk              % Return on private investment
+x1              % Price setting 1
+x2              % Price setting 2
+mc              % Marginal cost
+PIstar          % Optimnal gross inflation
+y              % Production
+Kg              % Public capital
+b              % Debt level
+by              % Debt/GDP
+Igi              % Public investment
+Gc              % Public consumption
+tauc            % Consumption tax
+tauw            % Income tax
+yd              % Aggregate demand
+vp              % Price dispersion
+omega           % Scaling
+Rss             % Steady state interest rate
+ydss            % Steady state output
+T           % Transfer
+G               % Total government spending (Gc+Igi+Ige+Grd)
+rreal           % Ex-post real interest rate (R/PI)
+pdef_yss        % Primary deficit, share of steady-state GDP
+T_yss       % Transfers, share of steady-state GDP
+by_yss          % Government debt, share of steady-state GDP
+
+H               % Human capital
+Kge             % Public Human-related Capital Stock (HCS)
+Ige             % Public spending in public humand-related capital stock
+E               % Time for schooling and taking care of health (building capital)
+lambda_H        % Lagrangian of the Human capital formation
+L             % Labor supply
+chiH            % Adjuster so that E=0.1
+eGE             % Gap in public human-capital efficiency (e^GE)
+eGI             % Gap in public infrastructure efficiency (e^GI)
+A             % Aoption Tech Process
+Grd            % R&D spending
+SDF             % Stochastic discount factor
+S             % Effective labor demand for tech adoption
+V              % Value of tech adoption
+q       % Probability of adoption
+J             % Value of unadopted Intermediate
+Z            % R&D product
+kappaprob       % Parameter in the probability for scaling
+eGRD            % Gap in public R&D efficiency (e^GRD)
+;
+
+%-----------------------------
+% Define exogenous variables
+%-----------------------------
+varexo
+epsi_gc         % Shock to government consumption
+epsi_igi         % Shock to government investment
+epsi_MP         % Monetary Policy Shocks
+epsi_tauc       % Consumption income tax shock
+epsi_tauw       % Labor income tax shock
+epsi_ige        % Public HC spending shock
+epsi_effge
+epsi_effgi
+epsi_grd       % Shock to R&D spending
+epsi_q
+epsi_effgrd
+eTaux          % Auxiliary transfer-rule dummy: zero suspends debt feedback
+;
+
+%--------------------------
+% Define parameters
+%--------------------------
+parameters
+betta           % Discount value
+varphi             % Frisch parameter
+chi             % indexation
+delta           % depreciationf
+thetap          % firsm cant change the price
+epsilon         % elasticity of substitution
+alpha          % share of capital in intermediate firms production
+alphaG          % Share of public capital in the production (paper alpha_G)
+rho_R           % Persistence of policy rate
+gamma_pi        % Reponse of MP to inflation
+gamma_y         % Reponse of MP to OG
+Piss            % SS of gross inflation
+taucss          % Consumption tax rate SS
+tauwss          % Income tax rate SS
+byss            % Steady state of debt
+g               % Constant gross trend growth rate
+Igiy             % Public investment/GDP
+Gcy             % Public consumption/GDP
+gamma_d_T   % Response of lump sum transfer to debt
+eGI_ss          % SS gap in public infrastructure efficiency (e^GI)
+deltaH          % Depreciation of Labor
+gamma             % Effectiveness of education investment.
+mu          % Elasticity of Human Capital Formation w.r.t. Public Human-related Capital (HRC)
+eGE_ss          % SS gap in public human-capital efficiency (e^GE)
+Igey            % Share of goevrnment expenditure to human capital
+alphaRD         % Long-run R&D elasticity in technology creation
+Grdy           % share of expenditure for R&D
+markupss        % SS markup of Intermediate goods
+phi           % obsolescence rate: 0.08/4
+vartheta      % Intermediate goods elasticity of substitution
+gammaa         % Gorwth of tech
+qss    % Probability of adoption
+varsigma      % Adoption elasticity
+alphaHA        % Long-run HC elasticity in technology creation (paper alpha_HA)
+rho_A
+eGRD_ss         % SS gap in public R&D efficiency (e^GRD)
+;

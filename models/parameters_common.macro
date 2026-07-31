@@ -1,0 +1,23 @@
+betta=0.9985;
+varphi= 5 ;   % inverse Frisch elasticity (Frisch 0.2), as in Gali (2015, Ch. 3); was 1.2
+chi =0.6;
+delta =0.025;
+thetap = 0.8;
+epsilon =10;
+alpha=0.3;
+rho_R=0.7;
+gamma_pi=1.5;
+gamma_y=0.125;   % quarterly response to minus the retail price markup, Gertler and Karadi (2011)
+Piss=1;
+
+gamma_d_T=0.01;
+
+deltaH=0.025;
+gamma=0.5;
+
+
+markupss=1.18;
+phi=1-0.08/4;   % obsolescence rate: 0.08/4
+vartheta=1.35;
+qss=0.2/4;
+rho_A=0.79;

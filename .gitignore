@@ -1,0 +1,22 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.html
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+# Dynare-generated sources and working directories.
+models/+*/
+models/*/checksum
+models/*/graphs/
+models/*/model/
+models/*-macroexp.mod
+models/Model_HumanCapital_*.mod
+models/EM_Model_HumanCapital_*.mod
+models/Model_HumanCapital_*_steadystate.m
+models/EM_Model_HumanCapital_*_steadystate.m
+models/*.shockValues

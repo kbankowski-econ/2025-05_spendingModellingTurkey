@@ -1,0 +1,71 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{mathpazo}
+
+\pagestyle{empty}
+\newcommand{\paneltitle}[1]{\parbox[t][2.4\baselineskip][t]{\linewidth}{\footnotesize\bfseries #1}}
+
+\begin{document}
+
+\noindent{\Large\bfseries Figure 13. Long-Term Gains in Output}\\[0.3em]
+{\normalsize (Percent deviation from steady state)}
+
+\vspace{0.2cm}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \paneltitle{1. Advanced Economies: Reallocation of Expenditure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/reallocationAE_yd.pdf}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \paneltitle{2. Emerging Market and Developing Economies: Reallocation of Expenditure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/reallocationEM_yd.pdf}
+\end{minipage}
+
+\vspace{2mm}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \paneltitle{3. Advanced Economies: Increase in Spending Efficiency}
+    \centering
+    \includegraphics[width=\linewidth]{figures/policyEfficiencyAE_yd.pdf}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \paneltitle{4. Emerging Market and Developing Economies: Increase in Spending Efficiency}
+    \centering
+    \includegraphics[width=\linewidth]{figures/policyEfficiencyEM_yd.pdf}
+\end{minipage}
+
+\vspace{2mm}
+
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \paneltitle{5. Advanced Economies: Combining Human Capital and R\&D}
+    \centering
+    \includegraphics[width=\linewidth]{figures/humanCapital_yd_IRF.pdf}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \paneltitle{6. Advanced Economies: High versus Low Levels of Technology Diffusion, 2050}
+    \centering
+    \includegraphics[width=\linewidth]{figures/diffusionAE_yd.pdf}
+\end{minipage}
+
+\vspace{2mm}
+
+{\footnotesize
+\noindent\textbf{Source:} Model simulations.
+
+\smallskip
+
+\noindent\textbf{Note:} Panels 1 and 2 report output responses to permanent 1-percent-of-GDP reallocations from public consumption toward the productive categories shown.
+Panels 3 and 4 report the additional gains from gradually improving spending efficiency; the markers in panel 4 denote initial efficiency gaps exactly 10 percentage points above the calibrated gaps, narrowed by the same amount as in the calibrated-gap reforms.
+Panel 5 compares human-capital investment, R\&D spending, and an equal combination of the two.
+Panel 6 shows how the gains from that combination vary with the speed of technology diffusion.
+\par}
+
+\end{document}

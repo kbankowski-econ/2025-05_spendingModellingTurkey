@@ -1,0 +1,148 @@
+//********************************************************
+// HOUSEHOLDS
+//********************************************************
+// Marginal utility
+1/C = lambda*(1+tauc);
+
+// Euler equation
+lambda = betta*(lambda(+1)/g*R/PI(+1));
+
+// Labor decision
+omega*(L+E)^varphi = lambda*w*H(-1)*(1-tauw);
+
+// Law of motion of private capital
+Kp*g = (1-delta)*Kp(-1)+Ip;
+
+// Return on private investment
+1 = betta*(lambda(+1)/lambda/g*(1-delta+rk(+1)));
+
+// Human capital of the household
+H = (1-deltaH)*H(-1)+chiH*E^gamma*(Kge(-1))^(mu);
+
+// Time devoted to building human capital (E)
+omega*(L+E)^varphi = lambda_H*chiH*gamma*E^(gamma-1)*(Kge(-1))^(mu);
+
+// Shadow value of human capital
+lambda_H = betta*(lambda(+1)*(1-tauw(+1))*w(+1)*L(+1)+lambda_H(+1)*(1-deltaH));
+
+// Stochastic discount factor (detrended)
+SDF = betta*lambda*(1+tauc)/(lambda(-1)*(1+tauc(-1)));
+
+// Effective labor
+N = L*H(-1);
+
+//********************************************************
+// PRODUCTION AND TECHNOLOGY
+//********************************************************
+// Price setting
+x1 = lambda*mc*yd+betta*thetap*(PI^chi/PI(+1))^(-epsilon)*x1(+1);
+x2 = lambda*PIstar*yd+betta*thetap*(PI^chi/PI(+1))^(1-epsilon)*PIstar/PIstar(+1)*x2(+1);
+epsilon*x1 = (epsilon-1)*x2;
+
+// Optimal factor mix
+Kp(-1)/N = alpha/(1-alpha)*w/rk;
+
+// Marginal cost
+(1-alpha)*mc*y/N = markupss*w;
+
+// Law of motion of prices
+1 = thetap*(PI(-1)^chi/PI)^(1-epsilon)+(1-thetap)*PIstar^(1-epsilon);
+
+// Production
+[name='y']
+y = A(-1)^(vartheta-1)*(Kg(-1)^(alphaG))*(Kp(-1)^alpha)*(N^(1-alpha));
+
+// Technology creation (R&D enters in efficiency-adjusted form)
+ln(Z/STEADY_STATE(Z)) = rho_A*ln(Z(-1)/STEADY_STATE(Z))+(1-rho_A)*alphaRD*ln((1-eGRD(-1))*Grd(-1)/((1-eGRD_ss)*STEADY_STATE(Grd)))+(1-rho_A)*alphaHA*ln(H(-1)/STEADY_STATE(H));
+
+// Value of an unadopted technology
+J = -S+phi*(SDF(+1)*A(-1)/A*1/(1+gammaa)*(q*V(+1)+(1-q)*J(+1)));
+
+// Probability of adoption
+q = (kappaprob+epsi_q)*(S)^(varsigma);
+
+// Adoption
+(1+gammaa)*A = q*phi*(Z(-1)-A(-1))+phi*A(-1);
+
+// Value of an adopted technology
+V = (markupss-1)/(markupss)*mc*y + phi*SDF(+1)*V(+1)*A(-1)/A/(1+gammaa);
+
+// FOC for adoption effort
+varsigma*q*phi*SDF(+1)/(1+gammaa)*A(-1)/A*(V(+1)-J(+1)) = S;
+
+//********************************************************
+// GOVERNMENT: FISCAL AND MONETARY POLICY
+//********************************************************
+// Taylor rule for the nominal policy and government financing rate
+R/Rss = (R(-1)/Rss)^rho_R*((PI/Piss)^gamma_pi*(mc/STEADY_STATE(mc))^gamma_y)^(1-rho_R)*exp(epsi_MP);
+
+// Public infrastructure capital
+Kg*g = (1-delta)*Kg(-1)+(1-eGI)*Igi;
+
+// Public education and health capital
+Kge*g = (1-delta)*Kge(-1)+(1-eGE)*Ige;
+
+// Government debt
+b = (R(-1)/PI)*b(-1)/g+Gc+Igi+Ige+Grd+T-tauw*w*N-tauc*C;
+
+// Debt to GDP
+by = b/y;
+
+// Government spending instruments (subject to expenditure shocks)
+Gc = Gcy*ydss+ydss*epsi_gc;                                     // consumption (explicit instrument; neutrality imposed via the offsetting epsi_gc shock)
+Igi = Igiy*ydss+ydss*epsi_igi;                                     // infrastructure investment
+Ige = Igey*ydss+ydss*epsi_ige;                                  // education and health investment
+Grd = Grdy*ydss+ydss*epsi_grd;                               // R&D spending
+
+// Consumption tax rate
+tauc = taucss+epsi_tauc;
+
+// Labor-income tax rate
+tauw = tauwss+epsi_tauw;
+
+// Lump-sum transfers
+T-STEADY_STATE(T) = -gamma_d_T*eTaux*(by(-1)-byss)*ydss;
+
+// Gap in infrastructure spending efficiency (e^GI)
+eGI = eGI_ss-epsi_effgi;
+
+// Gap in education and health spending efficiency (e^GE; positive shock closes the gap)
+eGE = eGE_ss-epsi_effge;
+
+// Gap in R&D spending efficiency (e^GRD)
+eGRD = eGRD_ss-epsi_effgrd;
+
+//********************************************************
+// MARKET CLEARING AND EQUILIBRIUM
+//********************************************************
+// Aggregate demand
+[name='yd']
+yd = C+Ip+Gc+Igi+Ige+Grd+(Z(-1)/A(-1)-1)*S;
+
+// Aggregate production
+y = vp*yd;
+
+// Price dispersion
+vp = thetap*(PI(-1)^chi/PI)^(-epsilon)*vp(-1)+(1-thetap)*PIstar^(-epsilon);
+
+//********************************************************
+// AUXILIARY AND REPORTING
+//********************************************************
+G = Gc+Igi+Ige+Grd;                                        // total government spending (sum of the four instruments)
+rreal = R/PI;                                              // ex-post real interest rate
+// Fiscal aggregates as a share of steady-state GDP (ydss)
+pdef_yss  = (Gc+Igi+Ige+Grd+T-tauw*w*N-tauc*C)/ydss;  // primary deficit
+T_yss = T/ydss;                                       // transfers
+by_yss    = b/ydss;                                          // government debt
+
+//********************************************************
+// STEADY-STATE VALUES CARRIED INTO THE MODEL BLOCK
+//********************************************************
+// Auxiliary variables pinned to their steady-state values; used as constants
+// in the rules above. Collected here for clarity — in Dynare the order of
+// equations within the model block does not affect the solution.
+omega       = STEADY_STATE(omega);
+Rss         = STEADY_STATE(R);
+ydss        = STEADY_STATE(yd);
+chiH        = STEADY_STATE(chiH);
+kappaprob   = STEADY_STATE(kappaprob);

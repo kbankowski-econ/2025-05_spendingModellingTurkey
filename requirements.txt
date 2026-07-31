@@ -1,0 +1,4 @@
+invoke>=2.2
+kaleido>=1.0
+pandas>=2.0
+plotly>=6.1

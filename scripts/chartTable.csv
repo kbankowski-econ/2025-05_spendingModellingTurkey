@@ -1,0 +1,7 @@
+id,pngFile,RenderWidth,RenderHeight,DisplayWidth,DisplayHeight
+fig_reallocation_ae,results/figures/reallocationAE_yd.png,7.5,5,7.5,5
+fig_reallocation_emde,results/figures/reallocationEM_yd.png,7.5,5,7.5,5
+fig_policy_efficiency_ae,results/figures/policyEfficiencyAE_yd.png,7.5,5,7.5,5
+fig_policy_efficiency_emde,results/figures/policyEfficiencyEM_yd.png,7.5,5,7.5,5
+fig_humancapital,results/figures/humanCapital_yd_IRF.png,10,6.7,10,6.7
+fig_diffusion,results/figures/diffusionAE_yd.png,10,6.7,10,6.7
