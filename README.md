@@ -1,6 +1,6 @@
 # Productive Spending Policy Experiments
 
-This repository reproduces **Figure 13: Long-Term Gains in Output**, a six-panel
+This repository reproduces **Long-Term Gains in Output**, a six-panel
 summary of productive public-spending policy experiments for advanced economies
 and emerging market and developing economies.
 
@@ -10,8 +10,10 @@ The retained experiments cover:
   infrastructure, human capital, or R&D;
 - gradual closure of infrastructure, human-capital, and R&D spending-efficiency
   gaps;
-- EMDE sensitivity cases whose initial gaps are exactly 10 percentage points
-  above the calibrated gaps and are narrowed by the same amount;
+- EMDE efficiency reforms at two closure speeds, completing the gap narrowing by
+  2050 or, faster, by 2040; and, at each speed, a sensitivity case whose initial
+  gaps are exactly 10 percentage points above the calibrated gaps and are
+  narrowed by the same amount;
 - a 50/50 human-capital and R&D spending mix; and
 - faster and slower private-sector technology diffusion.
 
