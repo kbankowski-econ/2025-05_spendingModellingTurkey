@@ -18,7 +18,7 @@ from wp_charts import (
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 INPUT_CSV = PROJECT_ROOT / "data" / "figure13_yearly.csv"
-FIGURES_DIR = PROJECT_ROOT / "results" / "figures"
+FIGURES_DIR = PROJECT_ROOT / "results" / "figure13" / "figures"
 TARGET_YEAR = 2050
 FONT_FAMILY = "Palatino, 'Palatino Linotype', 'Book Antiqua', serif"
 

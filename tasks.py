@@ -49,7 +49,7 @@ def document(c):
     """Compile the one-page Figure 13 results document."""
     c.run(
         "SOURCE_DATE_EPOCH=946684800 "
-        f'latexmk -g -pdf -cd "{ROOT / "results" / "summary.tex"}"'
+        f'latexmk -g -pdf -cd "{ROOT / "results" / "figure13" / "summary.tex"}"'
     )
 
 

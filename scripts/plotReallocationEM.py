@@ -9,7 +9,7 @@ Shocks:
   - Human capital investment  -> EM_Model_HumanCapital_epsicge
 
 The script reads the reduced annual export and writes chart files and plotted
-data to results/figures.
+data to results/figure13/figures.
 """
 from pathlib import Path
 
@@ -22,7 +22,7 @@ from wp_charts import chart_render_px, chart_display_cm, font_px_for_pt, smart_s
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 INPUT_CSV = PROJECT_ROOT / "data" / "figure13_yearly.csv"
-FIGURES_DIR = PROJECT_ROOT / "results" / "figures"
+FIGURES_DIR = PROJECT_ROOT / "results" / "figure13" / "figures"
 
 # --- Styling (inlined from the former chartConfig.json) -----------------------
 STYLE = {

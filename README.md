@@ -17,7 +17,8 @@ The retained experiments cover:
 - a 50/50 human-capital and R&D spending mix; and
 - faster and slower private-sector technology diffusion.
 
-The compiled result is [`results/summary.pdf`](results/summary.pdf). No other
+The compiled result is
+[`results/figure13/summary.pdf`](results/figure13/summary.pdf). No other
 model experiments or analytical documents are included.
 
 ## Structure
@@ -27,7 +28,8 @@ drivers/          Reduced MATLAB simulation and export drivers
 models/           Shared Dynare model source and 21 retained result files
 scripts/          Five Python chart generators for the six panels
 data/             Annual output responses used by the charts
-results/          Figure 13 source, PDF, and panel outputs
+results/          One folder per presentation
+  figure13/       Figure 13 source, PDF, and panel outputs
 ```
 
 ## Requirements
