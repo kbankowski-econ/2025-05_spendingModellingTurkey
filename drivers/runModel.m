@@ -39,6 +39,22 @@ modelList = {
     'EM_Model_HumanCapital_epsicgeeff30ylow',   'EM', 'EMlow',  {{'epsi_ige', 'const', 0.01, '1:1000'}; {'epsi_effge', 'ramp', 0.329, '1:60'};  {'epsi_gc', 'const', -0.01, '1:1000'}}
     'EM_Model_HumanCapital_epsicgeeff25y',      'EM', 'EMnorm', {{'epsi_ige', 'const', 0.01, '1:1000'}; {'epsi_effge', 'ramp', 0.329, '1:100'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
     'EM_Model_HumanCapital_epsicgeeff25ylow',   'EM', 'EMlow',  {{'epsi_ige', 'const', 0.01, '1:1000'}; {'epsi_effge', 'ramp', 0.329, '1:100'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
+
+    % Türkiye counterparts of the EMDE experiments, on the country-desk steady
+    % state and the Bankowski et al. 2026 efficiency gaps.
+    'TR_Model_HumanCapital_epsiig',        'TR', 'TRnorm', {{'epsi_igi', 'const', 0.01, '1:1000'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
+    'TR_Model_HumanCapital_epsiiglow',     'TR', 'TRlow',  {{'epsi_igi', 'const', 0.01, '1:1000'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
+    'TR_Model_HumanCapital_epsicge',       'TR', 'TRnorm', {{'epsi_ige', 'const', 0.01, '1:1000'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
+    'TR_Model_HumanCapital_epsicgelow',    'TR', 'TRlow',  {{'epsi_ige', 'const', 0.01, '1:1000'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
+
+    'TR_Model_HumanCapital_epsiigeff30y',       'TR', 'TRnorm', {{'epsi_igi', 'const', 0.01, '1:1000'}; {'epsi_effgi', 'ramp', 0.244,  '1:60'};  {'epsi_gc', 'const', -0.01, '1:1000'}}
+    'TR_Model_HumanCapital_epsiigeff30ylow',    'TR', 'TRlow',  {{'epsi_igi', 'const', 0.01, '1:1000'}; {'epsi_effgi', 'ramp', 0.244,  '1:60'};  {'epsi_gc', 'const', -0.01, '1:1000'}}
+    'TR_Model_HumanCapital_epsiigeff25y',       'TR', 'TRnorm', {{'epsi_igi', 'const', 0.01, '1:1000'}; {'epsi_effgi', 'ramp', 0.244,  '1:100'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
+    'TR_Model_HumanCapital_epsiigeff25ylow',    'TR', 'TRlow',  {{'epsi_igi', 'const', 0.01, '1:1000'}; {'epsi_effgi', 'ramp', 0.244,  '1:100'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
+    'TR_Model_HumanCapital_epsicgeeff30y',      'TR', 'TRnorm', {{'epsi_ige', 'const', 0.01, '1:1000'}; {'epsi_effge', 'ramp', 0.2315, '1:60'};  {'epsi_gc', 'const', -0.01, '1:1000'}}
+    'TR_Model_HumanCapital_epsicgeeff30ylow',   'TR', 'TRlow',  {{'epsi_ige', 'const', 0.01, '1:1000'}; {'epsi_effge', 'ramp', 0.2315, '1:60'};  {'epsi_gc', 'const', -0.01, '1:1000'}}
+    'TR_Model_HumanCapital_epsicgeeff25y',      'TR', 'TRnorm', {{'epsi_ige', 'const', 0.01, '1:1000'}; {'epsi_effge', 'ramp', 0.2315, '1:100'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
+    'TR_Model_HumanCapital_epsicgeeff25ylow',   'TR', 'TRlow',  {{'epsi_ige', 'const', 0.01, '1:1000'}; {'epsi_effge', 'ramp', 0.2315, '1:100'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
 };
 
 modelFilter = getenv('MODEL_FILTER');

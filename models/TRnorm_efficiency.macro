@@ -1,0 +1,4 @@
+% Türkiye efficiency gaps (Bankowski et al. 2026; human capital is the average
+% of the health and education gaps, 0.185 and 0.278)
+eGI_ss=0.244;
+eGE_ss=0.2315;

@@ -17,6 +17,8 @@ models/*/model/
 models/*-macroexp.mod
 models/Model_HumanCapital_*.mod
 models/EM_Model_HumanCapital_*.mod
+models/TR_Model_HumanCapital_*.mod
 models/Model_HumanCapital_*_steadystate.m
 models/EM_Model_HumanCapital_*_steadystate.m
+models/TR_Model_HumanCapital_*_steadystate.m
 models/*.shockValues

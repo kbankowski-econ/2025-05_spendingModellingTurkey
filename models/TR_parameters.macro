@@ -1,0 +1,28 @@
+% Türkiye-specific calibration        (definition                                    | EM value)
+% Steady-state targets from the country desk, 4 August 2026; see
+% calibration/turkiye/parameters.md. Parameters the desk did not report are
+% carried over from the EMDE calibration.
+
+% production and growth
+alphaG=0.17;                         % share of public capital in production         | EM: 0.17
+g=1.032^0.25;                        % constant gross quarterly trend growth         | EM: 1.0075
+
+% taxes and debt
+taucss=0.15;                         % steady-state consumption tax rate             | EM: 0.15
+tauwss=0.28;                         % steady-state income tax rate                  | EM: 0.10
+byss=0.3*4;                          % steady-state debt to quarterly GDP (annual x4)| EM: 0.6*4
+
+% public spending shares of GDP
+Igiy=0.04;                           % public investment                             | EM: 0.05
+Gcy=0.14;                            % public consumption                            | EM: 0.14
+Igey=0.03;                           % human-capital-related spending                | EM: 0.02
+Grdy=0.004;                          % R&D spending                                  | EM: 0.001
+
+% human capital
+mu=0.25;                             % elasticity of HC formation w.r.t. public HRC  | EM: 0.25
+
+% R&D and technology adoption
+eGRD_ss=0.457;                       % public R&D efficiency gap (e^GRD)             | EM: 0.2
+alphaRD=0;                           % long-run R&D elasticity in tech creation      | EM: 0
+alphaHA=0;                           % long-run HC elasticity in tech creation       | EM: 0
+varsigma=0.1;                        % adoption elasticity                           | EM: 0.1
