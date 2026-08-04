@@ -53,6 +53,15 @@ def document(c):
     )
 
 
+@task
+def presentation(c):
+    """Compile the Türkiye case-study presentation."""
+    c.run(
+        "SOURCE_DATE_EPOCH=946684800 "
+        f'latexmk -g -pdf -cd "{ROOT / "results" / "turkiye" / "presentation.tex"}"'
+    )
+
+
 @task(pre=[export, charts, document])
 def rebuild(c):
     """Rebuild Figure 13 from the committed model results."""

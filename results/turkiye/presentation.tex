@@ -1,0 +1,203 @@
+\documentclass[aspectratio=169, 11pt, t]{beamer}
+
+% --- Theme and Colors ---
+\usetheme{Boadilla}
+\usecolortheme{default}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[default]
+
+\definecolor{MyBlue}{RGB}{0, 51, 102}
+\definecolor{BoxGrey}{RGB}{245, 245, 247}
+\setbeamercolor{title}{fg=MyBlue}
+\setbeamercolor{frametitle}{fg=MyBlue}
+\setbeamercolor{structure}{fg=MyBlue}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{caption}
+\captionsetup{justification=raggedright,singlelinecheck=false,labelsep=colon,font=footnotesize,skip=-1pt}
+\setbeamertemplate{caption}[numbered]
+\usepackage{subcaption}
+\usepackage[normalem]{ulem}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+}
+
+% --- Figure paths ---
+\graphicspath{{./}{figures/}}
+
+% --- Placeholder box for material to be added (optional arg: box height) ---
+\newcommand{\placeholder}[2][0.52\textheight]{%
+    \begin{center}
+    \setlength{\fboxsep}{8pt}%
+    \fcolorbox{gray}{BoxGrey}{%
+        \begin{minipage}[c][#1][c]{0.95\textwidth}
+            \centering\itshape\color{gray} #2
+        \end{minipage}}%
+    \end{center}}
+
+% --- Presentation Info ---
+\title[]{Türkiye Case Study}
+\subtitle{Long-Term Output Gains from Productive Spending}
+\author{}
+\institute{}
+\date{}
+
+% --- Layout ---
+\setbeamertemplate{footline}[frame number]
+\setbeamersize{text margin left=1cm,text margin right=1cm}
+
+\begin{document}
+
+% --- Title Slide ---
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+
+% --- Slide: key takeaways ---
+\begin{frame}{Key Takeaways}
+    \small
+    \placeholder[0.62\textheight]{To be written once the charts are chosen.}
+\end{frame}
+
+% --- Slide: region-specific structural (non-efficiency) parameters ---
+\begin{frame}{Model Calibration: Region-Specific Parameters}\label{slide:params}
+    \vspace{-0.9em}
+    \begin{center}
+    \scriptsize
+    \renewcommand{\arraystretch}{0.92}
+    \begin{tabular}{l c c c}
+        \toprule
+        Parameter & Advanced & EMDEs & Türkiye \\
+        \midrule
+        \multicolumn{4}{l}{\textit{Production and growth}} \\
+        \quad Output elasticity of public capital ($\zeta$) & 0.054 & 0.17 & 0.17 \\
+        \quad Trend growth (annual in \%) & 1.6 & 3.0 & 3.2 \\
+        \addlinespace[0.1em]
+        \multicolumn{4}{l}{\textit{Fiscal}} \\
+        \quad Consumption tax rate (\%) & 18 & 15 & 15 \\
+        \quad Labour-income tax rate (\%) & 25 & 10 & 28 \\
+        \quad Public debt (\% of GDP) & 100 & 60 & 30 \\
+        \addlinespace[0.1em]
+        \multicolumn{4}{l}{\textit{Public spending (\% of GDP)}} \\
+        \quad Investment & 3.0 & 5.0 & 4.0 \\
+        \quad Consumption & 18.0 & 14.0 & 14.0 \\
+        \quad Human capital & 1.45 & 2.0 & 3.0 \\
+        \quad R\&D & 0.6 & 0.1 & 0.4 \\
+        \addlinespace[0.1em]
+        \multicolumn{4}{l}{\textit{Human capital and technology}} \\
+        \quad HC-formation elasticity ($\alpha_H$) & 0.10 & 0.25 & 0.25 \\
+        \quad HC-to-TFP feedback ($\alpha_{HA}$) & 0.48 & 0 & 0 \\
+        \quad R\&D-to-TFP elasticity ($\alpha_{RD}$) & 0.09 & 0 & 0 \\
+        \quad Adoption elasticity ($\varsigma$) & 0.8 & 0.1 & 0.1 \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+
+    \vspace{0.3em}
+    {\fontsize{6pt}{7.5pt}\selectfont
+        Sources: model calibration (AE\_parameters.macro, EM\_parameters.macro, TR\_parameters.macro). \\
+        Notes: Region-specific structural parameters. Türkiye follows the EMDE set except where the country desk reported its own steady-state targets: trend growth, the labour-income tax rate, public debt, and the four public-spending shares. Parameters the desk did not report keep their EMDE values, including the output elasticity of public capital. R\&D is largely switched off for EMDEs and therefore for Türkiye. \\
+    }
+\end{frame}
+
+% --- Slide: calibration table of efficiency gaps ---
+\begin{frame}{Calibration of Spending-Efficiency Gaps}\label{slide:calib}
+    \vspace{0.6em}
+    \begin{center}
+    \scriptsize
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{l c c c c}
+        \toprule
+        Efficiency gap ($1-$ efficiency) & Advanced & EMDEs & \multicolumn{2}{c}{Türkiye} \\
+        \cmidrule(lr){4-5}
+         & & & Used & \textit{Memo: FM 2025} \\
+        \midrule
+        Infrastructure & 0.359 & 0.406 & \cellcolor{gray!20}0.244 & \textit{0.394} \\
+        \addlinespace[0.4em]
+        \quad {\small Health}    & --- & --- & {\small 0.185} & \textit{\small 0.309} \\
+        \quad {\small Education} & --- & --- & {\small 0.278} & \textit{\small 0.328} \\
+        \addlinespace[0.3em]
+        Human capital (average) & 0.306 & 0.329 & \cellcolor{gray!20}0.232 & \textit{0.319} \\
+        \addlinespace[0.3em]
+        R\&D & 0.399 & 0.200 & \cellcolor{gray!20}0.457 & \textit{0.434} \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+
+    \vspace{1.0em}
+    {\fontsize{6pt}{7.5pt}\selectfont
+        Sources: IMF staff efficiency estimates; October 2025 Fiscal Monitor. \\
+        Notes: Spending-efficiency gaps (one minus the efficiency score). The Türkiye columns are the country-desk figures of 4 August 2026. The model uses the Bankowski et al.\ (2026) estimates; the Fiscal Monitor 2025 estimates are shown alongside for the sensitivity check and are not used in the simulations. The human-capital gap is the average of health and education. On the estimates used, Türkiye's infrastructure and human-capital gaps are smaller than the advanced-economy medians, so there is correspondingly less room for efficiency-led gains. \\
+    }
+\end{frame}
+
+% --- Slide: reallocation of expenditure ---
+\begin{frame}{Türkiye: Reallocation of Expenditure}
+    \vspace{0.3em}
+    \placeholder{Chart to be added.}
+    % \begin{columns}[T]
+    %     \begin{column}{0.49\textwidth}
+    %         \raggedright
+    %         \captionof{figure}{}\label{fig:reallocationTR}
+    %         {\centering\includegraphics[width=\textwidth]{FIGURE.png}\par}
+    %     \end{column}
+    %     \begin{column}{0.49\textwidth}
+    %     \end{column}
+    % \end{columns}
+
+    \vspace{1em}
+    {\fontsize{5pt}{6pt}\selectfont
+        Sources: IMF staff estimates. \\
+        Notes: \\
+    }
+\end{frame}
+
+% --- Slide: increase in spending efficiency ---
+\begin{frame}{Türkiye: Increase in Spending Efficiency}
+    \vspace{0.3em}
+    \placeholder{Chart to be added.}
+
+    \vspace{1em}
+    {\fontsize{5pt}{6pt}\selectfont
+        Sources: IMF staff estimates. \\
+        Notes: \\
+    }
+\end{frame}
+
+% --- Slide: reallocation and efficiency combined ---
+\begin{frame}{Reallocation and Efficiency Combined: EMDEs and Türkiye}
+    \vspace{0.3em}
+    \placeholder{Chart to be added.}
+
+    \vspace{1em}
+    {\fontsize{5pt}{6pt}\selectfont
+        Sources: IMF staff estimates. \\
+        Notes: \\
+    }
+\end{frame}
+
+% --- Slide: sensitivity to the source of the efficiency gaps ---
+\begin{frame}{Sensitivity: Working-Paper versus Fiscal Monitor Efficiency Gaps}
+    \vspace{0.3em}
+    \placeholder{Chart to be added.}
+
+    \vspace{1em}
+    {\fontsize{5pt}{6pt}\selectfont
+        Sources: IMF staff estimates. \\
+        Notes: \\
+    }
+\end{frame}
+
+\end{document}

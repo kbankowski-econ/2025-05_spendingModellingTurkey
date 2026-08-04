@@ -7,6 +7,9 @@ __pycache__/
 *.fls
 *.log
 *.out
+*.nav
+*.snm
+*.toc
 *.synctex.gz
 
 # Dynare-generated sources and working directories.
