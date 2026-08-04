@@ -26,6 +26,18 @@ modelList = [
     "EM_Model_HumanCapital_epsicgeeff30ylow"
     "EM_Model_HumanCapital_epsicgeeff25y"
     "EM_Model_HumanCapital_epsicgeeff25ylow"
+    "TR_Model_HumanCapital_epsiig"
+    "TR_Model_HumanCapital_epsiiglow"
+    "TR_Model_HumanCapital_epsicge"
+    "TR_Model_HumanCapital_epsicgelow"
+    "TR_Model_HumanCapital_epsiigeff30y"
+    "TR_Model_HumanCapital_epsiigeff30ylow"
+    "TR_Model_HumanCapital_epsiigeff25y"
+    "TR_Model_HumanCapital_epsiigeff25ylow"
+    "TR_Model_HumanCapital_epsicgeeff30y"
+    "TR_Model_HumanCapital_epsicgeeff30ylow"
+    "TR_Model_HumanCapital_epsicgeeff25y"
+    "TR_Model_HumanCapital_epsicgeeff25ylow"
 ];
 
 output = struct();
