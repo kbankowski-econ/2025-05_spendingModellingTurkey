@@ -150,32 +150,33 @@
 
 % --- Slide: calibration table of efficiency gaps ---
 \begin{frame}{Calibration of Spending-Efficiency Gaps}\label{slide:calib}
-    \vspace{0.6em}
+    \vspace{0.2em}
     \begin{center}
     \scriptsize
     \renewcommand{\arraystretch}{1.2}
-    \begin{tabular}{l c c c c}
+    \setlength{\tabcolsep}{5pt}   % six columns; the default padding overruns the text block
+    \begin{tabular}{llccrr}
         \toprule
-        Efficiency gap ($1-$ efficiency) & Advanced & EMDEs & \multicolumn{2}{c}{Türkiye} \\
-        \cmidrule(lr){4-5}
-         & & & Used & \textit{Memo: FM 2025} \\
+        Symbol & Efficiency gap ($1-$ efficiency) & AE & EMDE & \multicolumn{2}{c}{Türkiye} \\
+        \cmidrule(lr){5-6}
+         & & & & BCS (used) & FM (memo) \\
         \midrule
-        Infrastructure & 0.359 & 0.406 & \cellcolor{gray!20}0.244 & \textit{0.394} \\
-        \addlinespace[0.4em]
-        \quad {\small Health}    & --- & --- & {\small 0.185} & \textit{\small 0.309} \\
-        \quad {\small Education} & --- & --- & {\small 0.278} & \textit{\small 0.328} \\
+        $e^{GI}$ & Infrastructure & 0.360 & $(0.371+0.441)/2 = 0.406$ & \cellcolor{gray!20}0.244 & 0.394 \\
         \addlinespace[0.3em]
-        Human capital (average) & 0.306 & 0.329 & \cellcolor{gray!20}0.232 & \textit{0.319} \\
+        -- & \quad Health & 0.295 & $(0.312+0.308)/2 = 0.310$ & 0.185 & 0.309 \\
+        -- & \quad Education & 0.318 & $(0.348+0.350)/2 = 0.349$ & 0.278 & 0.328 \\
         \addlinespace[0.3em]
-        R\&D & 0.399 & 0.200 & \cellcolor{gray!20}0.457 & \textit{0.434} \\
+        $e^{GE}$ & Human capital (average) & 0.306 & 0.329 & \cellcolor{gray!20}0.232 & 0.319 \\
+        \addlinespace[0.3em]
+        $e^{GRD}$ & R\&D & 0.399 & -- & 0.457$^{*}$ & 0.434$^{*}$ \\
         \bottomrule
     \end{tabular}
     \end{center}
 
-    \vspace{1.0em}
+    \vspace{0.6em}
     {\fontsize{6pt}{7.5pt}\selectfont
-        Sources: IMF staff efficiency estimates; October 2025 Fiscal Monitor. \\
-        Notes: Spending-efficiency gaps (one minus the efficiency score). The Türkiye columns are the country-desk figures of 4 August 2026. The model uses the Bankowski et al.\ (2026) estimates; the Fiscal Monitor 2025 estimates are shown alongside for the sensitivity check and are not used in the simulations. The human-capital gap is the average of health and education. On the estimates used, Türkiye's infrastructure and human-capital gaps are smaller than the advanced-economy medians, so there is correspondingly less room for efficiency-led gains. \\
+        Sources: Bańkowski, K., C. H. Cho, and G. Sher (2026), ``Public Spending Efficiency,'' IMF Working Paper, International Monetary Fund, Washington, DC (BCS); October 2025 Fiscal Monitor (FM); country desk, 4 August 2026. \\
+        Notes: Spending-efficiency gaps (one minus the efficiency score), 2023 values. The AE column uses the advanced-economy median; the EMDE column averages the emerging-market and low-income medians; the human-capital gap is the average of the health and education gaps, for Türkiye $(0.185+0.278)/2$. The shaded Türkiye figures, from BCS, are the ones used in the main simulations; the FM column is a memo for the sensitivity check. $^{*}$Neither Türkiye R\&D estimate is used: the public-R\&D technology-creation channel is inactive outside the AE calibration, so an R\&D gap enters the budget but does not affect technology creation. \\
     }
 \end{frame}
 
