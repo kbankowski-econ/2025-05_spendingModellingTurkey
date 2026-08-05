@@ -38,6 +38,10 @@ modelList = [
     "TR_Model_HumanCapital_epsicgeeff30ylow"
     "TR_Model_HumanCapital_epsicgeeff25y"
     "TR_Model_HumanCapital_epsicgeeff25ylow"
+    "TR_Model_HumanCapital_epsiigfm"
+    "TR_Model_HumanCapital_epsicgefm"
+    "TR_Model_HumanCapital_epsiigeff25yfm"
+    "TR_Model_HumanCapital_epsicgeeff25yfm"
 ];
 
 output = struct();

@@ -14,3 +14,5 @@ deck_efficiency_tur,results/turkiye/figures/efficiencyTR_yd_lines.png,9,7.5,4.5,
 deck_combined_ae,results/turkiye/figures/combinedAE_yd_lines.png,9,7.5,4.5,3.75
 deck_combined_emde,results/turkiye/figures/combinedEM_yd_lines.png,9,7.5,4.5,3.75
 deck_combined_tur,results/turkiye/figures/combinedTR_yd_lines.png,9,7.5,4.5,3.75
+deck_efficiency_tur_fm,results/turkiye/figures/efficiencyTRfm_yd_lines.png,9,7.5,4.5,3.75
+deck_combined_tur_fm,results/turkiye/figures/combinedTRfm_yd_lines.png,9,7.5,4.5,3.75

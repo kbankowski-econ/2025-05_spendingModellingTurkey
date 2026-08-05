@@ -65,6 +65,12 @@ LABEL_GAP_LINES = 1.8
 # Palatino body text.
 FONT_FAMILY = "'Latin Modern Sans', 'CMU Sans Serif', Helvetica, Arial, sans-serif"
 
+# Background of the endpoint value labels. The sensitivity panels use green so
+# that a slide built on alternative efficiency-gap estimates is recognisable at
+# a glance, next to the yellow of the main results.
+LABEL_BG = "#FFF9C4"
+LABEL_BG_SENSITIVITY = "#DCEDC8"
+
 
 @dataclass
 class Series:
@@ -86,6 +92,7 @@ class Panel:
     # R&D line the other panels lack.
     dash_legend: list[tuple[str, str]] | None = None
     color_legend: list[tuple[str, str]] | None = None
+    label_bgcolor: str = LABEL_BG
 
 
 @dataclass
@@ -220,7 +227,7 @@ def _render_panel(df, panel: Panel, slide: Slide, yrange):
             x=last_year, y=label_y[index], text=f"{endpoints[index]:.1f}", showarrow=False,
             xshift=16, yshift=series.label_yshift,
             font=dict(size=legend_font_px, color=series.color),
-            bgcolor="#FFF9C4", borderpad=2,
+            bgcolor=panel.label_bgcolor, borderpad=2,
         )
 
     # Legends are drawn as empty traces so their swatches carry the same line

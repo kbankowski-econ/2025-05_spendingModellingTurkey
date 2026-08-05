@@ -1,0 +1,5 @@
+% Türkiye efficiency gaps on the October 2025 Fiscal Monitor estimates
+% (sensitivity; human capital is the average of the health and education gaps,
+% 0.309 and 0.328). The calibration used in the main results is TRnorm.
+eGI_ss=0.394;
+eGE_ss=0.3185;

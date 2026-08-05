@@ -161,7 +161,7 @@
         \cmidrule(lr){5-6}
          & & & & BCS (used) & FM (memo) \\
         \midrule
-        $e^{GI}$ & Infrastructure & 0.360 & $(0.371+0.441)/2 = 0.406$ & \cellcolor{gray!20}0.244 & 0.394 \\
+        $e^{GI}$ & Infrastructure & 0.359 & $(0.371+0.441)/2 = 0.406$ & \cellcolor{gray!20}0.244 & 0.394 \\
         \addlinespace[0.3em]
         -- & \quad Health & 0.295 & $(0.312+0.308)/2 = 0.310$ & 0.185 & 0.309 \\
         -- & \quad Education & 0.318 & $(0.348+0.350)/2 = 0.349$ & 0.278 & 0.328 \\
@@ -235,19 +235,54 @@
     \vfill
     {\fontsize{5pt}{6pt}\selectfont
         Sources: IMF staff estimates. \\
-        Notes: Output responses to a permanent reallocation of 1 percent of GDP in 2025 towards the category indicated by the colour, funded by a cut in public consumption, when the corresponding spending-efficiency gap is in addition closed gradually by 2050. Figure~\ref{fig:reallocation} shows the same reallocations without the efficiency reform, and Figure~\ref{fig:efficiency} the difference between the two. The three panels share a vertical axis. \\
+        Notes: Output responses to a permanent reallocation of 1 percent of GDP in 2025 towards the category indicated by the colour, funded by a cut in public consumption, when the corresponding spending-efficiency gap is in addition closed gradually by 2050. Figure~\ref{fig:reallocation} shows the same reallocations without the efficiency reform, and Figure~\ref{fig:efficiency} the difference between the two. The advanced-economy panel also includes R\&D, the only calibration in which the R\&D efficiency gap feeds technology creation. The three panels share a vertical axis. \\
     }
 \end{frame}
 
-% --- Slide: sensitivity to the source of the efficiency gaps ---
-\begin{frame}{Sensitivity: Working-Paper versus Fiscal Monitor Efficiency Gaps}
-    \vspace{0.3em}
-    \placeholder{Chart to be added.}
+% --- Section divider: the sensitivity results that follow ---
+\begin{frame}[plain]
+    \vfill
+    \begin{center}
+        {\Large\bfseries\color{MyBlue} Sensitivity}\\[0.8em]
+        {\large Türkiye on the Fiscal Monitor efficiency gaps}\\[1.4em]
+        {\footnotesize The two figures that follow repeat Figures~\ref{fig:efficiency}
+        and~\ref{fig:combined} with Türkiye recalibrated on the FM gaps.\\
+        Values on the recalibrated panel are labelled in green.}
+    \end{center}
+    \vfill
+\end{frame}
 
-    \vspace{1em}
+% --- Slide: spending efficiency, Fiscal Monitor gaps ---
+\begin{frame}{Increase in Spending Efficiency: Fiscal Monitor Gaps}
+    \vspace{0.2em}
+    \captionof{figure}{Additional gains in output over time (percent deviation from steady state)}\label{fig:efficiencyFM}
+    \begin{columns}[T]
+        \panel{Advanced economies}{efficiencyAE\_yd\_lines.pdf}
+        \panel{EMDEs}{efficiencyEM\_yd\_lines.pdf}
+        \panel{Türkiye, FM gaps}{efficiencyTRfm\_yd\_lines.pdf}
+    \end{columns}
+
+    \vfill
     {\fontsize{5pt}{6pt}\selectfont
         Sources: IMF staff estimates. \\
-        Notes: \\
+        Notes: Figure~\ref{fig:efficiency} recomputed with Türkiye's efficiency gaps taken from the October 2025 Fiscal Monitor, 0.394 for infrastructure and 0.319 for human capital, rather than the Bankowski et al.\ (2026) estimates of 0.244 and 0.232. The advanced-economy and EMDE panels are unchanged, as those calibrations have no alternative estimates. Green labels mark the recalibrated panel. All panels close the gap gradually by 2050 and share a vertical axis with Figure~\ref{fig:efficiency}. \\
+    }
+\end{frame}
+
+% --- Slide: reallocation and efficiency combined, Fiscal Monitor gaps ---
+\begin{frame}{Reallocation and Efficiency Combined: Fiscal Monitor Gaps}
+    \vspace{0.2em}
+    \captionof{figure}{Gains in output over time (percent deviation from steady state)}\label{fig:combinedFM}
+    \begin{columns}[T]
+        \panel{Advanced economies}{combinedAE\_yd\_lines.pdf}
+        \panel{EMDEs}{combinedEM\_yd\_lines.pdf}
+        \panel{Türkiye, FM gaps}{combinedTRfm\_yd\_lines.pdf}
+    \end{columns}
+
+    \vfill
+    {\fontsize{5pt}{6pt}\selectfont
+        Sources: IMF staff estimates. \\
+        Notes: Figure~\ref{fig:combined} recomputed on the Fiscal Monitor gaps, as in Figure~\ref{fig:efficiencyFM}. The larger gaps leave more room for efficiency-led gains, so the Türkiye panel rises well above its counterpart in the main results; the reallocation component is also affected, since the initial efficiency level enters the steady state. Green labels mark the recalibrated panel. The three panels share a vertical axis with Figure~\ref{fig:combined}. \\
     }
 \end{frame}
 

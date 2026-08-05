@@ -55,6 +55,14 @@ modelList = {
     'TR_Model_HumanCapital_epsicgeeff30ylow',   'TR', 'TRlow',  {{'epsi_ige', 'const', 0.01, '1:1000'}; {'epsi_effge', 'ramp', 0.2315, '1:60'};  {'epsi_gc', 'const', -0.01, '1:1000'}}
     'TR_Model_HumanCapital_epsicgeeff25y',      'TR', 'TRnorm', {{'epsi_ige', 'const', 0.01, '1:1000'}; {'epsi_effge', 'ramp', 0.2315, '1:100'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
     'TR_Model_HumanCapital_epsicgeeff25ylow',   'TR', 'TRlow',  {{'epsi_ige', 'const', 0.01, '1:1000'}; {'epsi_effge', 'ramp', 0.2315, '1:100'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
+
+    % Türkiye sensitivity: the same experiments on the Fiscal Monitor 2025
+    % efficiency gaps instead of the Bankowski et al. 2026 ones. Only the
+    % reallocations and the 2050 closures, which is what the deck reports.
+    'TR_Model_HumanCapital_epsiigfm',        'TR', 'TRfm', {{'epsi_igi', 'const', 0.01, '1:1000'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
+    'TR_Model_HumanCapital_epsicgefm',       'TR', 'TRfm', {{'epsi_ige', 'const', 0.01, '1:1000'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
+    'TR_Model_HumanCapital_epsiigeff25yfm',  'TR', 'TRfm', {{'epsi_igi', 'const', 0.01, '1:1000'}; {'epsi_effgi', 'ramp', 0.394,  '1:100'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
+    'TR_Model_HumanCapital_epsicgeeff25yfm', 'TR', 'TRfm', {{'epsi_ige', 'const', 0.01, '1:1000'}; {'epsi_effge', 'ramp', 0.3185, '1:100'}; {'epsi_gc', 'const', -0.01, '1:1000'}}
 };
 
 modelFilter = getenv('MODEL_FILTER');
