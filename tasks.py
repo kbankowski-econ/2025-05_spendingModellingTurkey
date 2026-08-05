@@ -15,6 +15,11 @@ PLOT_SCRIPTS = [
     "plotHumanCapitalIRFs.py",
     "plotDiffusionAE.py",
 ]
+DECK_PLOT_SCRIPTS = [
+    "plotDeckReallocation.py",
+    "plotDeckEfficiency.py",
+    "plotDeckCombined.py",
+]
 
 
 @task(name="models")
@@ -53,7 +58,14 @@ def document(c):
     )
 
 
-@task
+@task(name="deck-charts")
+def deck_charts(c):
+    """Generate the three-panel charts for the Türkiye presentation."""
+    for script in DECK_PLOT_SCRIPTS:
+        c.run(f'"{sys.executable}" "{ROOT / "scripts" / script}"')
+
+
+@task(pre=[deck_charts])
 def presentation(c):
     """Compile the Türkiye case-study presentation."""
     c.run(

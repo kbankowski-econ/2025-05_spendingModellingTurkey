@@ -71,44 +71,80 @@
     \placeholder[0.62\textheight]{To be written once the charts are chosen.}
 \end{frame}
 
-% --- Slide: region-specific structural (non-efficiency) parameters ---
-\begin{frame}{Model Calibration: Region-Specific Parameters}\label{slide:params}
-    \vspace{-0.9em}
+% --- Slide: steady-state targets (Table 2 of the working paper) ---
+\begin{frame}{Model Calibration: Steady-State Targets}\label{slide:targets}
+    \vspace{-0.4em}
     \begin{center}
     \scriptsize
-    \renewcommand{\arraystretch}{0.92}
-    \begin{tabular}{l c c c}
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabular}{lllccc}
         \toprule
-        Parameter & Advanced & EMDEs & Türkiye \\
+        Symbol & Target & Unit & AE & EMDE & Türkiye \\
         \midrule
-        \multicolumn{4}{l}{\textit{Production and growth}} \\
-        \quad Output elasticity of public capital ($\zeta$) & 0.054 & 0.17 & 0.17 \\
-        \quad Trend growth (annual in \%) & 1.6 & 3.0 & 3.2 \\
+        \multicolumn{6}{@{}l}{\textit{Growth}} \\
         \addlinespace[0.1em]
-        \multicolumn{4}{l}{\textit{Fiscal}} \\
-        \quad Consumption tax rate (\%) & 18 & 15 & 15 \\
-        \quad Labour-income tax rate (\%) & 25 & 10 & 28 \\
-        \quad Public debt (\% of GDP) & 100 & 60 & 30 \\
+        \quad $g^4-1$ & Annual trend output growth & Percent & 1.6 & 3.0 & 3.2 \\
+        \addlinespace[0.4em]
+        \multicolumn{6}{@{}l}{\textit{Public spending}} \\
         \addlinespace[0.1em]
-        \multicolumn{4}{l}{\textit{Public spending (\% of GDP)}} \\
-        \quad Investment & 3.0 & 5.0 & 4.0 \\
-        \quad Consumption & 18.0 & 14.0 & 14.0 \\
-        \quad Human capital & 1.45 & 2.0 & 3.0 \\
-        \quad R\&D & 0.6 & 0.1 & 0.4 \\
+        \quad $G^{C,SS}/Y^{d,SS}$ & Government consumption & Percent of GDP & 18.0 & 14.0 & 14.0 \\
+        \quad $I^{GI,SS}/Y^{d,SS}$ & Infrastructure investment & Percent of GDP & 3.0 & 5.0 & 4.0 \\
+        \quad $I^{GE,SS}/Y^{d,SS}$ & Human-capital investment & Percent of GDP & 1.45 & 2.0 & 3.0 \\
+        \quad $G^{RD,SS}/Y^{d,SS}$ & Public R\&D spending & Percent of GDP & 0.6 & 0.1 & 0.4 \\
+        \addlinespace[0.4em]
+        \multicolumn{6}{@{}l}{\textit{Implicit tax rates}} \\
         \addlinespace[0.1em]
-        \multicolumn{4}{l}{\textit{Human capital and technology}} \\
-        \quad HC-formation elasticity ($\alpha_H$) & 0.10 & 0.25 & 0.25 \\
-        \quad HC-to-TFP feedback ($\alpha_{HA}$) & 0.48 & 0 & 0 \\
-        \quad R\&D-to-TFP elasticity ($\alpha_{RD}$) & 0.09 & 0 & 0 \\
-        \quad Adoption elasticity ($\varsigma$) & 0.8 & 0.1 & 0.1 \\
+        \quad $\tau^{c,SS}$ & Consumption tax & Percent & 18 & 15 & 15 \\
+        \quad $\tau^{w,SS}$ & Labor-income tax & Percent & 25 & 10 & 28 \\
+        \addlinespace[0.4em]
+        \multicolumn{6}{@{}l}{\textit{Public debt}} \\
+        \addlinespace[0.1em]
+        \quad $b^{SS}/(4Y^{d,SS})$ & Public debt level & Percent of annual GDP & 100 & 60 & 30 \\
         \bottomrule
     \end{tabular}
     \end{center}
 
-    \vspace{0.3em}
+    \vspace{0.6em}
     {\fontsize{6pt}{7.5pt}\selectfont
-        Sources: model calibration (AE\_parameters.macro, EM\_parameters.macro, TR\_parameters.macro). \\
-        Notes: Region-specific structural parameters. Türkiye follows the EMDE set except where the country desk reported its own steady-state targets: trend growth, the labour-income tax rate, public debt, and the four public-spending shares. Parameters the desk did not report keep their EMDE values, including the output elasticity of public capital. R\&D is largely switched off for EMDEs and therefore for Türkiye. \\
+        Sources: IMF staff calibration; Türkiye targets from the country desk, 4 August 2026. \\
+        Notes: Trend growth is annualized from the quarterly gross rate. Public debt is reported relative to annual GDP; the Dynare implementation divides debt by quarterly GDP and therefore stores four times the ratios shown here. Spending shares are relative to quarterly GDP, while implicit tax rates are measured against their corresponding tax bases; both are numerically unchanged at an annual frequency. Every Türkiye target was supplied by the desk. \\
+    }
+\end{frame}
+
+% --- Slide: productive-spending channels (Table 3 of the working paper) ---
+\begin{frame}{Model Calibration: Productive-Spending Channels}\label{slide:params}
+    \vspace{0.2em}
+    \begin{center}
+    \scriptsize
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabular}{llccc}
+        \toprule
+        & & AE & EMDE & Türkiye \\
+        \midrule
+        \multicolumn{5}{@{}l}{\textit{Public infrastructure}} \\
+        \addlinespace[0.1em]
+        \quad $\alpha_G$ & Output elasticity of public infrastructure & 0.054 & 0.17 & 0.17 \\
+        \addlinespace[0.4em]
+        \multicolumn{5}{@{}l}{\textit{Human capital accumulation}} \\
+        \addlinespace[0.1em]
+        \quad $\mu$ & Elasticity w.r.t.\ the public human-capital stock & 0.10 & 0.25 & 0.25 \\
+        \quad $\gamma$ & Elasticity w.r.t.\ the time input & 0.50 & 0.50 & 0.50 \\
+        \addlinespace[0.4em]
+        \multicolumn{5}{@{}l}{\textit{Technology creation and adoption}} \\
+        \addlinespace[0.1em]
+        \quad $\alpha_{HA}$ & Long-run human-capital elasticity & 0.48 & -- & -- \\
+        \quad $\alpha_{RD}$ & Long-run public-R\&D elasticity & 0.09 & -- & -- \\
+        \quad $\rho_A$ & Persistence of created technology & 0.79 & -- & -- \\
+        \quad $\phi$ & Survival rate of technologies & 0.98 & 0.98 & 0.98 \\
+        \quad $\varsigma$ & Elasticity of the adoption probability & 0.80 & 0.10 & 0.10 \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+
+    \vspace{0.8em}
+    {\fontsize{6pt}{7.5pt}\selectfont
+        Sources: IMF staff estimates. \\
+        Notes: Structural parameters governing the productive-spending channels. ``--'' marks technology-creation parameters that are inactive outside the advanced-economy calibration; endogenous adoption is retained instead, with $\varsigma=0.10$, so existing unadopted technologies still diffuse into production. Türkiye takes the entire EMDE parameter set: the country desk reported steady-state targets only, and none of these elasticities. \\
     }
 \end{frame}
 
@@ -143,48 +179,62 @@
     }
 \end{frame}
 
-% --- Slide: reallocation of expenditure ---
-\begin{frame}{Türkiye: Reallocation of Expenditure}
-    \vspace{0.3em}
-    \placeholder{Chart to be added.}
-    % \begin{columns}[T]
-    %     \begin{column}{0.49\textwidth}
-    %         \raggedright
-    %         \captionof{figure}{}\label{fig:reallocationTR}
-    %         {\centering\includegraphics[width=\textwidth]{FIGURE.png}\par}
-    %     \end{column}
-    %     \begin{column}{0.49\textwidth}
-    %     \end{column}
-    % \end{columns}
+% --- Three-panel chart slides. \panel places one calibration's chart under a
+%     short heading; the three share a y-axis so they can be read across. ---
+\newcommand{\panel}[2]{%
+    \begin{column}{0.32\textwidth}
+        \centering{\scriptsize\bfseries #1}\par
+        \includegraphics[width=\textwidth]{#2}
+    \end{column}}
 
-    \vspace{1em}
+% --- Slide: reallocation of expenditure ---
+\begin{frame}{Reallocation of Expenditure}
+    \vspace{0.2em}
+    \captionof{figure}{Gains in output over time (percent deviation from steady state)}\label{fig:reallocation}
+    \begin{columns}[T]
+        \panel{Advanced economies}{reallocationAE\_yd\_lines.pdf}
+        \panel{EMDEs}{reallocationEM\_yd\_lines.pdf}
+        \panel{Türkiye}{reallocationTR\_yd\_lines.pdf}
+    \end{columns}
+
+    \vfill
     {\fontsize{5pt}{6pt}\selectfont
         Sources: IMF staff estimates. \\
-        Notes: \\
+        Notes: Output responses to a permanent increase of 1 percent of GDP in 2025 in the expenditure category shown, funded by a cut in public consumption. Markers sit at 2026, 2030, 2040 and 2050; the labels give the 2050 values. The three panels share a vertical axis. There is no R\&D reallocation experiment for EMDEs or Türkiye, so those panels carry two lines. \\
     }
 \end{frame}
 
 % --- Slide: increase in spending efficiency ---
-\begin{frame}{Türkiye: Increase in Spending Efficiency}
-    \vspace{0.3em}
-    \placeholder{Chart to be added.}
+\begin{frame}{Increase in Spending Efficiency}
+    \vspace{0.2em}
+    \captionof{figure}{Additional gains in output over time (percent deviation from steady state)}\label{fig:efficiency}
+    \begin{columns}[T]
+        \panel{Advanced economies}{efficiencyAE\_yd\_lines.pdf}
+        \panel{EMDEs}{efficiencyEM\_yd\_lines.pdf}
+        \panel{Türkiye}{efficiencyTR\_yd\_lines.pdf}
+    \end{columns}
 
-    \vspace{1em}
+    \vfill
     {\fontsize{5pt}{6pt}\selectfont
         Sources: IMF staff estimates. \\
-        Notes: \\
+        Notes: Additional gains from gradually closing the spending-efficiency gap, over and above the reallocation-only baseline: each line is the efficiency-closing scenario minus the corresponding reallocation experiment. Solid lines close the gap by 2050, dashed lines by 2040. The advanced-economy set has only the 2050 closure and therefore shows solid lines alone, but it does include R\&D. The three panels share a vertical axis. Türkiye's gains are smaller than the EMDE ones because its calibrated gaps are smaller, not because closure is less effective. \\
     }
 \end{frame}
 
 % --- Slide: reallocation and efficiency combined ---
-\begin{frame}{Reallocation and Efficiency Combined: EMDEs and Türkiye}
-    \vspace{0.3em}
-    \placeholder{Chart to be added.}
+\begin{frame}{Reallocation and Efficiency Combined}
+    \vspace{0.2em}
+    \captionof{figure}{Gains in output over time (percent deviation from steady state)}\label{fig:combined}
+    \begin{columns}[T]
+        \panel{Advanced economies}{combinedAE\_yd\_lines.pdf}
+        \panel{EMDEs}{combinedEM\_yd\_lines.pdf}
+        \panel{Türkiye}{combinedTR\_yd\_lines.pdf}
+    \end{columns}
 
-    \vspace{1em}
+    \vfill
     {\fontsize{5pt}{6pt}\selectfont
         Sources: IMF staff estimates. \\
-        Notes: \\
+        Notes: Solid lines show the output response to a permanent reallocation of 1 percent of GDP in 2025 towards the category indicated by the colour, funded by a cut in public consumption. Dashed lines show the overall effect when the corresponding spending-efficiency gap is in addition closed gradually by 2050. The closure horizon is 2050 in all three panels: EMDEs and Türkiye also have a 2040 closure, but the advanced-economy set does not. The three panels share a vertical axis. \\
     }
 \end{frame}
 
