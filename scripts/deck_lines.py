@@ -58,7 +58,12 @@ LEGEND_FONT_PT = 6
 # Minimum gap between two endpoint value labels, as a multiple of their font
 # size: the label box is roughly one line plus padding.
 LABEL_GAP_LINES = 1.8
-FONT_FAMILY = "Palatino, 'Palatino Linotype', 'Book Antiqua', serif"
+# Helvetica, matching the deck, which sets the same family in its preamble. Both
+# sides therefore render identically on any machine, which beamer's default
+# Latin Modern Sans could not do: it ships with TeX Live rather than as a system
+# font, so the browser engine behind the chart renderer cannot see it. The
+# paper's charts are unaffected and keep its Palatino body text.
+FONT_FAMILY = "Helvetica, Arial, sans-serif"
 
 
 @dataclass
